@@ -6,15 +6,16 @@ import {
   infoColor,
   roseColor
 } from "../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const badgeStyle = {
+const badgeStyle = createStyles({
   badge: {
     marginRight: "3px",
     borderRadius: "12px",
     padding: "5px 12px",
     textTransform: "uppercase",
     fontSize: "10px",
-    fontWeight: "500",
+    fontWeight: 500,
     lineHeight: "1",
     color: "#fff",
     textAlign: "center",
@@ -43,6 +44,6 @@ const badgeStyle = {
   gray: {
     backgroundColor: "#6c757d"
   }
-};
+});
 
 export default badgeStyle;
