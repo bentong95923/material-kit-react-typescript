@@ -1,8 +1,8 @@
 import { defaultFont } from "../../material-kit-react";
+import tooltip from "../tooltipsStyle";
+import { Theme } from "@material-ui/core";
 
-import tooltip from "../../tooltipsStyle";
-
-const headerLinksStyle = theme => ({
+const headerLinksStyle = (theme: Theme) => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
