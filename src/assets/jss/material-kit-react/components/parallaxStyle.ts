@@ -1,4 +1,6 @@
-const parallaxStyle = {
+import { createStyles } from "@material-ui/core/styles";
+
+const parallaxStyle = createStyles({
   parallax: {
     height: "90vh",
     maxHeight: "1000px",
@@ -18,7 +20,7 @@ const parallaxStyle = {
     },
     "&:after,&:before": {
       position: "absolute",
-      zIndex: "1",
+      zIndex: 0,
       width: "100%",
       height: "100%",
       display: "block",
@@ -30,6 +32,6 @@ const parallaxStyle = {
   small: {
     height: "380px"
   }
-};
+});
 
 export default parallaxStyle;

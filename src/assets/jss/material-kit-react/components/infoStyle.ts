@@ -8,8 +8,9 @@ import {
   grayColor,
   title
 } from "../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const infoStyle = {
+const infoStyle = createStyles({
   infoArea: {
     maxWidth: "360px",
     margin: "0 auto",
@@ -63,6 +64,6 @@ const infoStyle = {
     width: "61px",
     height: "61px"
   }
-};
+});
 
 export default infoStyle;

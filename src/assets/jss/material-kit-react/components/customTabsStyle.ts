@@ -1,4 +1,6 @@
-const customTabsStyle = {
+import { createStyles } from "@material-ui/core/styles";
+
+const customTabsStyle = createStyles({
   cardTitle: {
     float: "left",
     padding: "10px 10px 10px 0px",
@@ -27,7 +29,7 @@ const customTabsStyle = {
     border: "0 !important",
     color: "#fff !important",
     marginLeft: "4px",
-    fontWeight: "500",
+    fontWeight: 500,
     fontSize: "12px",
     "&:last-child": {
       marginLeft: "0px"
@@ -53,6 +55,6 @@ const customTabsStyle = {
       letterSpacing: "normal !important"
     }
   }
-};
+});
 
 export default customTabsStyle;

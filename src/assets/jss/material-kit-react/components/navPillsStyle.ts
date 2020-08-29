@@ -1,4 +1,4 @@
-import { Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   roseColor,
   primaryColor,
@@ -8,7 +8,7 @@ import {
   dangerColor
 } from "../../material-kit-react";
 
-const navPillsStyle = (theme: Theme) => ({
+const navPillsStyle = makeStyles((theme: Theme) => createStyles({
   root: {
     marginTop: "20px",
     paddingLeft: "0",
@@ -17,7 +17,7 @@ const navPillsStyle = (theme: Theme) => ({
     lineHeight: "24px",
     textTransform: "uppercase",
     fontSize: "12px",
-    fontWeight: "500",
+    fontWeight: 500,
     position: "relative",
     display: "block",
     color: "inherit"
@@ -66,7 +66,7 @@ const navPillsStyle = (theme: Theme) => ({
   },
   horizontalPills: {
     width: "100%",
-    float: "none !important",
+    float: "none !important" as any,
     "& + button": {
       margin: "10px 0"
     }
@@ -131,12 +131,12 @@ const navPillsStyle = (theme: Theme) => ({
     position: "relative",
     fontSize: "12px",
     lineHeight: "24px",
-    fontWeight: "500",
+    fontWeight: 500,
     textTransform: "uppercase",
     "&,& *": {
       letterSpacing: "normal"
     }
   }
-});
+}));
 
 export default navPillsStyle;

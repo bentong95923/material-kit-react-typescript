@@ -1,6 +1,7 @@
 import { container, title } from "../../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const notificationsStyles = {
+const notificationsStyles = createStyles({
   section: {
     backgroundColor: "#FFFFFF",
     display: "block",
@@ -15,6 +16,6 @@ const notificationsStyles = {
     textDecoration: "none"
   },
   container
-};
+});
 
 export default notificationsStyles;

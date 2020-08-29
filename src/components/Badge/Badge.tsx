@@ -14,8 +14,7 @@ const useStyles = makeStyles(styles);
 
 function Badge(props: any) {
   const classes = useStyles();
-  const color = props.color;
-  const { children } = props;
+  const { color, children } = props;
   return (
     <span className={classes.badge + " " + getKeyValue(classes)(color)}>
       {children}

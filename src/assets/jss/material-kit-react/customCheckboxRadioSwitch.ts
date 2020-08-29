@@ -4,8 +4,9 @@ import {
   roseColor,
   grayColor
 } from "../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const customCheckboxRadioSwitch = {
+const customCheckboxRadioSwitch = createStyles({
   checkRoot: {
     padding: "12px",
     "&:hover": {
@@ -64,7 +65,7 @@ const customCheckboxRadioSwitch = {
     color: "rgba(0, 0, 0, 0.26)",
     fontSize: "14px",
     lineHeight: "1.428571429",
-    fontWeight: "400",
+    fontWeight: 400,
     display: "inline-flex",
     transition: "0.3s ease all",
     letterSpacing: "unset"
@@ -75,7 +76,7 @@ const customCheckboxRadioSwitch = {
     display: "inline-flex",
     fontSize: "14px",
     lineHeight: "1.428571429",
-    fontWeight: "400",
+    fontWeight: 400,
     paddingTop: "39px",
     marginRight: "0",
     "@media (min-width: 992px)": {
@@ -91,7 +92,7 @@ const customCheckboxRadioSwitch = {
     display: "inline-flex",
     fontSize: "14px",
     lineHeight: "1.428571429",
-    fontWeight: "400",
+    fontWeight: 400,
     paddingTop: "22px",
     marginRight: "0"
   },
@@ -175,6 +176,6 @@ const customCheckboxRadioSwitch = {
   switchRoot: {
     height: "48px"
   }
-};
+});
 
 export default customCheckboxRadioSwitch;

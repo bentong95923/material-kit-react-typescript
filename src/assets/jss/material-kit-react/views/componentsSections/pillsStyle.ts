@@ -1,6 +1,7 @@
 import { container, title } from "../../../material-kit-react.js";
+import { createStyles } from "@material-ui/core/styles";
 
-const pillsStyle = {
+const pillsStyle = createStyles({
   section: {
     padding: "70px 0"
   },
@@ -11,6 +12,6 @@ const pillsStyle = {
     minHeight: "32px",
     textDecoration: "none"
   }
-};
+});
 
 export default pillsStyle;

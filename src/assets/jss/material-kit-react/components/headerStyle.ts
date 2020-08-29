@@ -11,8 +11,9 @@ import {
   boxShadow,
   drawerWidth
 } from "../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const headerStyle = {
+const headerStyle = createStyles({
   appBar: {
     display: "flex",
     border: "0",
@@ -33,11 +34,11 @@ const headerStyle = {
   },
   absolute: {
     position: "absolute",
-    zIndex: "1100"
+    zIndex: 1100
   },
   fixed: {
     position: "fixed",
-    zIndex: "1100"
+    zIndex: 1100
   },
   container: {
     ...container,
@@ -147,6 +148,6 @@ const headerStyle = {
     paddingLeft: "0",
     ...transition
   }
-};
+});
 
 export default headerStyle;

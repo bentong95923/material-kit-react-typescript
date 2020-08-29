@@ -7,8 +7,9 @@ import {
   warningColor,
   dangerColor
 } from "../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const buttonStyle = {
+const buttonStyle = createStyles({
   button: {
     minHeight: "auto",
     minWidth: "auto",
@@ -22,7 +23,7 @@ const buttonStyle = {
     padding: "12px 30px",
     margin: ".3125rem 1px",
     fontSize: "12px",
-    fontWeight: "400",
+    fontWeight: 400,
     textTransform: "uppercase",
     letterSpacing: "0",
     willChange: "box-shadow, transform",
@@ -319,6 +320,6 @@ const buttonStyle = {
       }
     }
   }
-};
+});
 
 export default buttonStyle;

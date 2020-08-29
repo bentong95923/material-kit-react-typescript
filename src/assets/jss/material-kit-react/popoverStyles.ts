@@ -1,4 +1,6 @@
-const popoverStyles = {
+import { createStyles } from "@material-ui/core/styles";
+
+const popoverStyles = createStyles({
   popover: {
     padding: "0",
     boxShadow:
@@ -11,7 +13,7 @@ const popoverStyles = {
     maxWidth: "276px",
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontStyle: "normal",
-    fontWeight: "400",
+    fontWeight: 400,
     textAlign: "start",
     textDecoration: "none",
     textShadow: "none",
@@ -42,6 +44,6 @@ const popoverStyles = {
     lineHeight: "1.4",
     color: "#555"
   }
-};
+});
 
 export default popoverStyles;

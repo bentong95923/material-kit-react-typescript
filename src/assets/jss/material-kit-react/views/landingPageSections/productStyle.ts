@@ -1,6 +1,7 @@
 import { title } from "../../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const productStyle = {
+const productStyle = createStyles({
   section: {
     padding: "70px 0",
     textAlign: "center"
@@ -15,6 +16,6 @@ const productStyle = {
   description: {
     color: "#999"
   }
-};
+});
 
 export default productStyle;

@@ -3,8 +3,9 @@ import { container, title } from "../../../material-kit-react.js";
 import modalStyle from "../../modalStyle";
 import tooltipsStyle from "../../tooltipsStyle";
 import popoverStyles from "../../../material-kit-react/popoverStyles";
+import { createStyles } from '@material-ui/core/styles';
 
-const javascriptStyles = {
+const javascriptStyles = createStyles({
   section: {
     padding: "70px 0 0"
   },
@@ -28,12 +29,12 @@ const javascriptStyles = {
     fontSize: "14px",
     transition: "0.3s ease all",
     lineHeight: "1.428571429",
-    fontWeight: "400",
+    fontWeight: 400,
     paddingLeft: "0",
     letterSpacing: "normal"
   },
   ...tooltipsStyle,
   ...popoverStyles
-};
+});
 
 export default javascriptStyles;

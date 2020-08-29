@@ -6,8 +6,9 @@ import {
   warningColor,
   dangerColor
 } from "../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const paginationStyle = {
+const paginationStyle = createStyles({
   pagination: {
     display: "inline-block",
     paddingLeft: "0",
@@ -31,7 +32,7 @@ const paginationStyle = {
     height: "30px",
     minHeight: "auto",
     lineHeight: "30px",
-    fontWeight: "400",
+    fontWeight: 400,
     fontSize: "12px",
     textTransform: "uppercase",
     background: "transparent",
@@ -124,6 +125,6 @@ const paginationStyle = {
       borderColor: "#ddd"
     }
   }
-};
+});
 
 export default paginationStyle;

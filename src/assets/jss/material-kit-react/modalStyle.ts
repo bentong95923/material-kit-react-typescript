@@ -1,4 +1,6 @@
-const modalStyle = {
+import { createStyles } from '@material-ui/core/styles';
+
+const modalStyle = createStyles({
   modal: {
     borderRadius: "6px"
   },
@@ -25,7 +27,7 @@ const modalStyle = {
     fontSize: "inherit",
     opacity: ".9",
     textShadow: "none",
-    fontWeight: "700",
+    fontWeight: 700,
     lineHeight: "1",
     float: "right"
   },
@@ -50,6 +52,6 @@ const modalStyle = {
     marginLeft: "auto",
     marginRight: "auto"
   }
-};
+});
 
 export default modalStyle;

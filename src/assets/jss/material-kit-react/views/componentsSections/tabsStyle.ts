@@ -1,6 +1,7 @@
 import { container } from  "../../../material-kit-react.js";
+import { createStyles } from "@material-ui/core/styles";
 
-const tabsStyle = {
+const tabsStyle = createStyles({
   section: {
     background: "#EEEEEE",
     padding: "70px 0"
@@ -9,6 +10,6 @@ const tabsStyle = {
   textCenter: {
     textAlign: "center"
   }
-};
+});
 
 export default tabsStyle;

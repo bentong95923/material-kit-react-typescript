@@ -1,8 +1,9 @@
 import { container, title } from "../../../material-kit-react";
 
 import imagesStyles from "../../imagesStyles";
+import { createStyles } from "@material-ui/core/styles";
 
-const typographyStyle = {
+const typographyStyle = createStyles({
   section: {
     padding: "70px 0"
   },
@@ -28,7 +29,7 @@ const typographyStyle = {
     bottom: "10px",
     color: "#c0c1c2",
     display: "block",
-    fontWeight: "400",
+    fontWeight: 400,
     fontSize: "13px",
     lineHeight: "13px",
     left: "0",
@@ -40,6 +41,6 @@ const typographyStyle = {
     marginLeft: "auto !important"
   },
   ...imagesStyles
-};
+});
 
 export default typographyStyle;

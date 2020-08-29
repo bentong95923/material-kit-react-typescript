@@ -1,6 +1,7 @@
 import { container } from "../../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const downloadStyle = {
+const downloadStyle = createStyles({
   section: {
     padding: "70px 0"
   },
@@ -22,6 +23,6 @@ const downloadStyle = {
     fontSize: "20px",
     marginRight: "4px"
   }
-};
+});
 
 export default downloadStyle;

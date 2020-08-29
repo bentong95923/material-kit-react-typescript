@@ -1,6 +1,7 @@
 import { container } from "../../material-kit-react";
+import { createStyles } from '@material-ui/core/styles';
 
-const componentsStyle = {
+const componentsStyle = createStyles({
   container,
   brand: {
     color: "#FFFFFF",
@@ -8,7 +9,7 @@ const componentsStyle = {
   },
   title: {
     fontSize: "4.2rem",
-    fontWeight: "600",
+    fontWeight: 600,
     display: "inline-block",
     position: "relative"
   },
@@ -20,7 +21,7 @@ const componentsStyle = {
   main: {
     background: "#FFFFFF",
     position: "relative",
-    zIndex: "3"
+    zIndex: 3
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -34,6 +35,6 @@ const componentsStyle = {
   textCenter: {
     textAlign: "center"
   }
-};
+});
 
 export default componentsStyle;

@@ -1,6 +1,7 @@
 import { title } from "../../../material-kit-react";
+import { createStyles } from "@material-ui/core/styles";
 
-const workStyle = {
+const workStyle = createStyles({
   section: {
     padding: "70px 0"
   },
@@ -23,6 +24,6 @@ const workStyle = {
     marginRight: "15px",
     marginLeft: "15px"
   }
-};
+});
 
 export default workStyle;

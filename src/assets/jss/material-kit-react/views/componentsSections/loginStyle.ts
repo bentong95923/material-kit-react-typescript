@@ -1,8 +1,9 @@
 import { container } from "../../../material-kit-react";
 
 import image from "../../../../img/sign.jpg";
+import { createStyles } from "@material-ui/core/styles";
 
-const loginStyle = {
+const loginStyle = createStyles({
   section: {
     minHeight: "110vh",
     maxHeight: "1600px",
@@ -59,6 +60,6 @@ const loginStyle = {
   inputIconsColor: {
     color: "#495057"
   }
-};
+});
 
 export default loginStyle;
