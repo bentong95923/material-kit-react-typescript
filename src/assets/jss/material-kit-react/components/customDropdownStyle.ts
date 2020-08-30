@@ -14,7 +14,7 @@ import {
   roseBoxShadow
 } from "../../material-kit-react";
 
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import { Theme, createStyles } from '@material-ui/core/styles';
 
 const customDropdownStyle = (theme: Theme) => createStyles({
   popperClose: {

@@ -14,8 +14,6 @@
 
  */
 
-import { CSSProperties } from "react";
-
 // ##############################
 // // // Variables - Styles that are used on more than one component
 // #############################
