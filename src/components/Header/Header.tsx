@@ -14,11 +14,13 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import styles from "assets/jss/material-kit-react/components/headerStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/headerStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+export default function Header(props: any) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
@@ -40,23 +42,23 @@ export default function Header(props) {
     if (windowsScrollTop > changeColorOnScroll.height) {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove(classes[color]);
+        .classList.remove(getKeyValue(classes)(color));
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(classes[changeColorOnScroll.color]);
+        .classList.add(getKeyValue(classes)(changeColorOnScroll.color));
     } else {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(classes[color]);
+        .classList.add(getKeyValue(classes)(color));
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove(classes[changeColorOnScroll.color]);
+        .classList.remove(getKeyValue(classes)(changeColorOnScroll.color));
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
-    [classes[color]]: color,
+    [getKeyValue(classes)(color)]: color,
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
@@ -111,41 +113,41 @@ Header.defaultProp = {
   color: "white"
 };
 
-Header.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "transparent",
-    "white",
-    "rose",
-    "dark"
-  ]),
-  rightLinks: PropTypes.node,
-  leftLinks: PropTypes.node,
-  brand: PropTypes.string,
-  fixed: PropTypes.bool,
-  absolute: PropTypes.bool,
-  // this will cause the sidebar to change the color from
-  // props.color (see above) to changeColorOnScroll.color
-  // when the window.pageYOffset is heigher or equal to
-  // changeColorOnScroll.height and then when it is smaller than
-  // changeColorOnScroll.height change it back to
-  // props.color (see above)
-  changeColorOnScroll: PropTypes.shape({
-    height: PropTypes.number.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "info",
-      "success",
-      "warning",
-      "danger",
-      "transparent",
-      "white",
-      "rose",
-      "dark"
-    ]).isRequired
-  })
-};
+// Header.propTypes = {
+//   color: PropTypes.oneOf([
+//     "primary",
+//     "info",
+//     "success",
+//     "warning",
+//     "danger",
+//     "transparent",
+//     "white",
+//     "rose",
+//     "dark"
+//   ]),
+//   rightLinks: PropTypes.node,
+//   leftLinks: PropTypes.node,
+//   brand: PropTypes.string,
+//   fixed: PropTypes.bool,
+//   absolute: PropTypes.bool,
+//   // this will cause the sidebar to change the color from
+//   // props.color (see above) to changeColorOnScroll.color
+//   // when the window.pageYOffset is heigher or equal to
+//   // changeColorOnScroll.height and then when it is smaller than
+//   // changeColorOnScroll.height change it back to
+//   // props.color (see above)
+//   changeColorOnScroll: PropTypes.shape({
+//     height: PropTypes.number.isRequired,
+//     color: PropTypes.oneOf([
+//       "primary",
+//       "info",
+//       "success",
+//       "warning",
+//       "danger",
+//       "transparent",
+//       "white",
+//       "rose",
+//       "dark"
+//     ]).isRequired
+//   })
+// };

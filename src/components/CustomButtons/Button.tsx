@@ -10,13 +10,15 @@ import Button from "@material-ui/core/Button";
 
 // core components
 
-import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle.js";
+import buttonStyle from "../../assets/jss/material-kit-react/components/buttonStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const makeComponentStyles = makeStyles(() => ({
   ...buttonStyle
 }));
 
-const RegularButton = React.forwardRef((props, ref) => {
+const RegularButton = React.forwardRef((props: any, ref) => {
   const {
     color,
     round,
@@ -36,8 +38,8 @@ const RegularButton = React.forwardRef((props, ref) => {
 
   const btnClasses = classNames({
     [classes.button]: true,
-    [classes[size]]: size,
-    [classes[color]]: color,
+    [getKeyValue(classes)(size)]: size,
+    [getKeyValue(classes)(color)]: color,
     [classes.round]: round,
     [classes.fullWidth]: fullWidth,
     [classes.disabled]: disabled,
@@ -53,32 +55,5 @@ const RegularButton = React.forwardRef((props, ref) => {
     </Button>
   );
 });
-
-RegularButton.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "white",
-    "facebook",
-    "twitter",
-    "google",
-    "github",
-    "transparent"
-  ]),
-  size: PropTypes.oneOf(["sm", "lg"]),
-  simple: PropTypes.bool,
-  round: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  disabled: PropTypes.bool,
-  block: PropTypes.bool,
-  link: PropTypes.bool,
-  justIcon: PropTypes.bool,
-  children: PropTypes.node,
-  className: PropTypes.string
-};
 
 export default RegularButton;

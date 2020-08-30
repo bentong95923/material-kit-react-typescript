@@ -2,10 +2,10 @@ import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-const styles = {
+const styles = createStyles({
   grid: {
     position: "relative",
     width: "100%",
@@ -14,11 +14,11 @@ const styles = {
     paddingLeft: "15px",
     flexBasis: "auto"
   }
-};
+});
 
 const useStyles = makeStyles(styles);
 
-export default function GridItem(props) {
+export default function GridItem(props: any) {
   const classes = useStyles();
   const { children, className, ...rest } = props;
   return (
@@ -30,9 +30,4 @@ export default function GridItem(props) {
 
 GridItem.defaultProps = {
   className: ""
-};
-
-GridItem.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string
 };

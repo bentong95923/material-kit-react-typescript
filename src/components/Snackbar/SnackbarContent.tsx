@@ -10,16 +10,20 @@ import Icon from "@material-ui/core/Icon";
 import Close from "@material-ui/icons/Close";
 // core components
 
-import styles from "assets/jss/material-kit-react/components/snackbarContentStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/snackbarContentStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const useStyles = makeStyles(styles);
 
-export default function SnackbarContent(props) {
+const nullJSXElement: any = null;
+
+export default function SnackbarContent(props: any) {
   const { message, color, close, icon } = props;
   const classes = useStyles();
-  var action = [];
+  let action: any = [];
   const closeAlert = () => {
-    setAlert(null);
+    setAlert(nullJSXElement);
   };
   if (close !== undefined) {
     action = [
@@ -56,17 +60,10 @@ export default function SnackbarContent(props) {
         </div>
       }
       classes={{
-        root: classes.root + " " + classes[color],
+        root: classes.root + " " + getKeyValue(classes)(color),
         message: classes.message + " " + classes.container
       }}
     />
   );
   return alert;
 }
-
-SnackbarContent.propTypes = {
-  message: PropTypes.node.isRequired,
-  color: PropTypes.oneOf(["info", "success", "warning", "danger", "primary"]),
-  close: PropTypes.bool,
-  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-};

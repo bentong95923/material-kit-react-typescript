@@ -1,9 +1,9 @@
 import React from "react";
 
 // mterial-ui components
-import { makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const styles = {
+const styles = createStyles({
   clearfix: {
     "&:after,&:before": {
       display: "table",
@@ -13,7 +13,7 @@ const styles = {
       clear: "both"
     }
   }
-};
+});
 
 const useStyles = makeStyles(styles);
 
@@ -21,5 +21,3 @@ export default function Clearfix() {
   const classes = useStyles();
   return <div className={classes.clearfix} />;
 }
-
-Clearfix.propTypes = {};

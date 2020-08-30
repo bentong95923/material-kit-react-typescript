@@ -16,32 +16,36 @@ import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
 
 // core components
-import Button from "components/CustomButtons/Button.js";
+import Button from "../CustomButtons/Button";
 
-import styles from "assets/jss/material-kit-react/components/customDropdownStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/customDropdownStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const useStyles = makeStyles(styles);
 
-export default function CustomDropdown(props) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const handleClick = event => {
+const nullElement: HTMLElement| null = null;
+
+export default function CustomDropdown(props: any) {
+  const [anchorEl, setAnchorEl] = React.useState(nullElement);
+  const handleClick = (event: any) => {
     if (anchorEl && anchorEl.contains(event.target)) {
-      setAnchorEl(null);
+      setAnchorEl(nullElement);
     } else {
       setAnchorEl(event.currentTarget);
     }
   };
-  const handleClose = param => {
-    setAnchorEl(null);
+  const handleClose = (param: any) => {
+    setAnchorEl(nullElement);
     if (props && props.onClick) {
       props.onClick(param);
     }
   };
-  const handleCloseAway = event => {
-    if (anchorEl.contains(event.target)) {
+  const handleCloseAway = (event: any) => {
+    if (anchorEl && anchorEl.contains(event.target)) {
       return;
     }
-    setAnchorEl(null);
+    setAnchorEl(nullElement);
   };
   const classes = useStyles();
   const {
@@ -64,7 +68,7 @@ export default function CustomDropdown(props) {
   });
   const dropdownItem = classNames({
     [classes.dropdownItem]: true,
-    [classes[hoverColor + "Hover"]]: true,
+    [getKeyValue(classes)((hoverColor + "Hover") as (keyof typeof classes))]: true,
     [classes.noLiPadding]: noLiPadding,
     [classes.dropdownItemRTL]: rtlActive
   });
@@ -117,7 +121,7 @@ export default function CustomDropdown(props) {
         {() => (
           <Grow
             in={Boolean(anchorEl)}
-            id="menu-list"
+            //id="menu-list"
             style={
               dropup
                 ? { transformOrigin: "0 100% 0" }
@@ -135,7 +139,7 @@ export default function CustomDropdown(props) {
                       {dropdownHeader}
                     </MenuItem>
                   ) : null}
-                  {dropdownList.map((prop, key) => {
+                  {dropdownList.map((prop: any, key: any) => {
                     if (prop.divider) {
                       return (
                         <Divider
@@ -168,28 +172,4 @@ export default function CustomDropdown(props) {
 CustomDropdown.defaultProps = {
   caret: true,
   hoverColor: "primary"
-};
-
-CustomDropdown.propTypes = {
-  hoverColor: PropTypes.oneOf([
-    "black",
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose"
-  ]),
-  buttonText: PropTypes.node,
-  buttonIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  dropdownList: PropTypes.array,
-  buttonProps: PropTypes.object,
-  dropup: PropTypes.bool,
-  dropdownHeader: PropTypes.node,
-  rtlActive: PropTypes.bool,
-  caret: PropTypes.bool,
-  left: PropTypes.bool,
-  noLiPadding: PropTypes.bool,
-  // function that retuns the selected item
-  onClick: PropTypes.func
 };

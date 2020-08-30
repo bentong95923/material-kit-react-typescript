@@ -6,16 +6,18 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "assets/jss/material-kit-react/components/infoStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/infoStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const useStyles = makeStyles(styles);
 
-export default function InfoArea(props) {
+export default function InfoArea(props: any) {
   const classes = useStyles();
   const { title, description, iconColor, vertical } = props;
   const iconWrapper = classNames({
     [classes.iconWrapper]: true,
-    [classes[iconColor]]: true,
+    [getKeyValue(classes)(iconColor)]: true,
     [classes.iconWrapperVertical]: vertical
   });
   const iconClasses = classNames({
@@ -37,20 +39,4 @@ export default function InfoArea(props) {
 
 InfoArea.defaultProps = {
   iconColor: "gray"
-};
-
-InfoArea.propTypes = {
-  icon: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  iconColor: PropTypes.oneOf([
-    "primary",
-    "warning",
-    "danger",
-    "success",
-    "info",
-    "rose",
-    "gray"
-  ]),
-  vertical: PropTypes.bool
 };

@@ -5,8 +5,7 @@ import Badge from './components/Badge/Badge';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="App">      
         <Badge>Hello</Badge>
     </div>
   );

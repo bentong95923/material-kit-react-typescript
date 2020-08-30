@@ -27,10 +27,3 @@ export default function Card(props: any) {
     </div>
   );
 }
-
-Card.propTypes = {
-  className: PropTypes.string,
-  plain: PropTypes.bool,
-  carousel: PropTypes.bool,
-  children: PropTypes.node
-};

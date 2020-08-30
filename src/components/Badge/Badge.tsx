@@ -7,12 +7,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "../../assets/jss/material-kit-react/components/badgeStyle";
 
-const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) =>
-    obj[key];
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
   
 const useStyles = makeStyles(styles);
 
-function Badge(props: any) {
+export default function Badge(props: any) {
   const classes = useStyles();
   const { color, children } = props;
   return (
@@ -25,5 +24,3 @@ function Badge(props: any) {
 Badge.defaultProps = {
   color: "gray"
 };
-
-export default Badge;

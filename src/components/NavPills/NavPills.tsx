@@ -11,19 +11,21 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "../Grid/GridContainer";
+import GridItem from "../Grid/GridItem";
 
-import styles from "assets/jss/material-kit-react/components/navPillsStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/navPillsStyle";
+
+const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
 const useStyles = makeStyles(styles);
 
-export default function NavPills(props) {
+export default function NavPills(props: any) {
   const [active, setActive] = React.useState(props.active);
-  const handleChange = (event, active) => {
+  const handleChange = (event: any, active: any) => {
     setActive(active);
   };
-  const handleChangeIndex = index => {
+  const handleChangeIndex = (index: any) => {
     setActive(index);
   };
   const classes = useStyles();
@@ -44,10 +46,10 @@ export default function NavPills(props) {
       onChange={handleChange}
       centered={alignCenter}
     >
-      {tabs.map((prop, key) => {
-        var icon = {};
+      {tabs.map((prop: any, key: any) => {
+        var icon: {[k: string]: any} = {};
         if (prop.tabIcon !== undefined) {
-          icon["icon"] = <prop.tabIcon className={classes.tabIcon} />;
+          icon.icon = <prop.tabIcon className={classes.tabIcon} />;
         }
         const pillsClasses = classNames({
           [classes.pills]: true,
@@ -61,7 +63,7 @@ export default function NavPills(props) {
             {...icon}
             classes={{
               root: pillsClasses,
-              selected: classes[color],
+              selected: getKeyValue(classes)(color),
               wrapper: classes.tabWrapper
             }}
           />
@@ -76,9 +78,10 @@ export default function NavPills(props) {
         index={active}
         onChangeIndex={handleChangeIndex}
       >
-        {tabs.map((prop, key) => {
+        {tabs.map((prop: any, key: any) => {
           return (
-            <div className={classes.tabContent} key={key}>
+            // <div className={classes.tabContent} key={key}>
+            <div key={key}>
               {prop.tabContent}
             </div>
           );
@@ -102,30 +105,4 @@ export default function NavPills(props) {
 NavPills.defaultProps = {
   active: 0,
   color: "primary"
-};
-
-NavPills.propTypes = {
-  // index of the default active pill
-  active: PropTypes.number,
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      tabButton: PropTypes.string,
-      tabIcon: PropTypes.object,
-      tabContent: PropTypes.node
-    })
-  ).isRequired,
-  color: PropTypes.oneOf([
-    "primary",
-    "warning",
-    "danger",
-    "success",
-    "info",
-    "rose"
-  ]),
-  direction: PropTypes.string,
-  horizontal: PropTypes.shape({
-    tabsGrid: PropTypes.object,
-    contentGrid: PropTypes.object
-  }),
-  alignCenter: PropTypes.bool
 };

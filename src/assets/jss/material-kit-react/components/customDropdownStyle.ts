@@ -16,7 +16,7 @@ import {
 
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
-const customDropdownStyle = makeStyles((theme: Theme) => createStyles({
+const customDropdownStyle = (theme: Theme) => createStyles({
   popperClose: {
     pointerEvents: "none"
   },
@@ -166,6 +166,6 @@ const customDropdownStyle = makeStyles((theme: Theme) => createStyles({
   noLiPadding: {
     padding: "0"
   }
-}));
+});
 
 export default customDropdownStyle;

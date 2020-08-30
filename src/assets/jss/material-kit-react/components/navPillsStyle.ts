@@ -8,7 +8,7 @@ import {
   dangerColor
 } from "../../material-kit-react";
 
-const navPillsStyle = makeStyles((theme: Theme) => createStyles({
+const navPillsStyle = (theme: Theme) => createStyles({
   root: {
     marginTop: "20px",
     paddingLeft: "0",
@@ -137,6 +137,6 @@ const navPillsStyle = makeStyles((theme: Theme) => createStyles({
       letterSpacing: "normal"
     }
   }
-}));
+});
 
 export default navPillsStyle;

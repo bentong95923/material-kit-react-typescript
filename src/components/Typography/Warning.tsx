@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import styles from "assets/jss/material-kit-react/components/typographyStyle.js";
+import styles from "../../assets/jss/material-kit-react/components/typographyStyle";
 
 const useStyles = makeStyles(styles);
 
-export default function Small(props) {
+export default function Warning(props: any) {
   const classes = useStyles();
   const { children } = props;
   return (
-    <div className={classes.defaultFontStyle + " " + classes.smallText}>
+    <div className={classes.defaultFontStyle + " " + classes.warningText}>
       {children}
     </div>
   );
 }
 
-Small.propTypes = {
+Warning.propTypes = {
   children: PropTypes.node
 };
