@@ -1,5 +1,8 @@
 # Material Kit React Typed
 
+Creater: Creative Tim Official
+Converted by Benjamin Tong
+
 This repo is a clone of the free Material Kit React (not the PRO version) downloaded from the [Create Tim](https://www.creative-tim.com/product/material-kit-react/) website but is converted to TypeScript. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and migrate the original JavaScript files and other resources then converted to .ts/.tsx files.
