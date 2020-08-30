@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // material-ui core components
@@ -85,7 +83,3 @@ export default function Footer(props: any) {
     </footer>
   );
 }
-
-Footer.propTypes = {
-  whiteFont: PropTypes.bool
-};

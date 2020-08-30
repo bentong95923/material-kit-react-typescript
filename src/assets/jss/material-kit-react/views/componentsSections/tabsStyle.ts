@@ -1,4 +1,4 @@
-import { container } from  "../../../material-kit-react.js";
+import { container } from  "../../../material-kit-react";
 import { createStyles } from "@material-ui/core/styles";
 
 const tabsStyle = createStyles({

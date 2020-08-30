@@ -1,8 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -180,31 +178,6 @@ class CustomDropdown extends React.Component {
 CustomDropdown.defaultProps = {
   caret: true,
   hoverColor: "primary"
-};
-
-CustomDropdown.propTypes = {
-  classes: PropTypes.object.isRequired,
-  hoverColor: PropTypes.oneOf([
-    "black",
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose"
-  ]),
-  buttonText: PropTypes.node,
-  buttonIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string]),
-  dropdownList: PropTypes.array,
-  buttonProps: PropTypes.object,
-  dropup: PropTypes.bool,
-  dropdownHeader: PropTypes.node,
-  rtlActive: PropTypes.bool,
-  caret: PropTypes.bool,
-  left: PropTypes.bool,
-  noLiPadding: PropTypes.bool,
-  // function that retuns the selected item
-  onClick: PropTypes.func
 };
 
 export default withStyles(customDropdownStyle)(CustomDropdown);

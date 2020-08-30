@@ -1,8 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -112,42 +110,3 @@ export default function Header(props: any) {
 Header.defaultProp = {
   color: "white"
 };
-
-// Header.propTypes = {
-//   color: PropTypes.oneOf([
-//     "primary",
-//     "info",
-//     "success",
-//     "warning",
-//     "danger",
-//     "transparent",
-//     "white",
-//     "rose",
-//     "dark"
-//   ]),
-//   rightLinks: PropTypes.node,
-//   leftLinks: PropTypes.node,
-//   brand: PropTypes.string,
-//   fixed: PropTypes.bool,
-//   absolute: PropTypes.bool,
-//   // this will cause the sidebar to change the color from
-//   // props.color (see above) to changeColorOnScroll.color
-//   // when the window.pageYOffset is heigher or equal to
-//   // changeColorOnScroll.height and then when it is smaller than
-//   // changeColorOnScroll.height change it back to
-//   // props.color (see above)
-//   changeColorOnScroll: PropTypes.shape({
-//     height: PropTypes.number.isRequired,
-//     color: PropTypes.oneOf([
-//       "primary",
-//       "info",
-//       "success",
-//       "warning",
-//       "danger",
-//       "transparent",
-//       "white",
-//       "rose",
-//       "dark"
-//     ]).isRequired
-//   })
-// };
